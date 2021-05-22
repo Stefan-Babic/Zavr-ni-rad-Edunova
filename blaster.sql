@@ -3,27 +3,28 @@ create database blaster;
 use blaster;
 create table user(
 id int not null primary key auto_increment,
-first_name varchar(50) not null,
-last_name varchar(50) not null,
-username varchar(50) not null,
-email varchar(100) not null
+first_name varchar(255) not null,
+last_name varchar(255) not null,
+username varchar(255) not null,
+password char(50),
+email varchar(255) not null
 );
 create table post(
 id int not null primary key auto_increment,
-text varchar(250),
-audio_file varchar(50),
+text varchar(255),
+audio_file char(50),
 genre int, 
 user int
 );
 create table genre(
 id int not null primary key auto_increment,
-name_of_the_genre varchar(50)
+name varchar(255)
 );
 create table comment(
 id int not null primary key auto_increment,
 user int,
 post int,
-comment_text varchar(250)
+content text
 );
 create table favorite(
 id int not null primary key auto_increment,
